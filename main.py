@@ -50,7 +50,6 @@ def handle_appeal(message):
                         reply_to_message_id=message_id
                     )
         else:
-            create_appeal(message, conn, c)
             appeal_id = active_appeal[0]
             c.execute('SELECT message_id FROM appeals WHERE appeal_id = ?', (appeal_id,))
             result = c.fetchone()
